@@ -9,7 +9,7 @@ from vision import Vision
 wincap = WindowCapture('RuneLite - Iswer69')
 
 # load the trained model
-cascade_cows = cv.CascadeClassifier('cascade3/cascade.xml')
+cascade_cows = cv.CascadeClassifier('cascade5/cascade.xml')
 
 # load an empty Vision class
 vision_cows = Vision(None)

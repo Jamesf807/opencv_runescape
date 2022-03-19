@@ -1,0 +1,37 @@
+import cv2 as cv
+import numpy as np
+import os
+from time import time
+from windowcapture import WindowCapture
+
+#initialize WindowCapture Class
+wincap = WindowCapture('Runelite - Iswer69')
+
+loop_time = time()
+
+while(True):
+
+    # get an updated image of the game
+    screenshot = wincap.get_screenshot()
+
+    #display the images
+    cv.imshow('Unprocessed', screenshot)
+
+    # debug the loop rate
+    print('FPS {}'.format(1 / (time() - loop_time)))
+    loop_time = time()
+
+    # press 'q' with the output window focused to exit
+    # press 'f' to save screenshot as a positive image, press 'd' to
+    # save as a negative image
+    # waits 1 ms every loop to process key presses
+    key = cv.waitKey(1)
+    if cv.waitKey(1) == ord('q'):
+        cv.destroyAllWindows()
+        break
+    elif key == ord('f'):
+        cv.imwrite('positive/{}.png'.format(loop_time), screenshot)
+    elif key == ord('d'):
+        cv.imwrite('negative/{}.png'.format(loop_time), screenshot)
+
+print('Done.')
