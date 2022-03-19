@@ -6,10 +6,10 @@ from windowcapture import WindowCapture
 from vision import Vision
 
 # initialize the WindowCapture class
-wincap = WindowCapture('RuneLite - Polorino')
+wincap = WindowCapture('RuneLite - Iswer69')
 
 # load the trained model
-cascade_cows = cv.CascadeClassifier('cascade2/cascade.xml')
+cascade_cows = cv.CascadeClassifier('cascade3/cascade.xml')
 
 # load an empty Vision class
 vision_cows = Vision(None)
